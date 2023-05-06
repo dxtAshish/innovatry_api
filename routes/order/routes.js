@@ -1,13 +1,13 @@
-const express = require("express")
-const getProduct = require("../../middleware/fetchProduct")
-const fetchuser = require("../../middleware/fetchuser")
-const addorder=require("./post/addOrder")
-const router =  express.Router()
+const express = require("express");
+const getProduct = require("../../middleware/fetchProduct");
+const fetchuser = require("../../middleware/fetchuser");
+const addorder = require("./post/addOrder");
+const getByUserId = require("./get/getByUserId");
+const router = express.Router();
+
+router.post("/order/:product_id", getProduct, fetchuser, addorder);
 
 
-router.post("/order/:product_id",
-   getProduct,
-   fetchuser,
-   addorder)
-   
-   module.exports = router
+router.get("/order/getorderByuser",fetchuser,getByUserId)
+
+module.exports = router;

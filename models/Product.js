@@ -19,6 +19,11 @@ const ProductSchema= new mongoose.Schema({
         type:Number,
         required:true
     },
+    category:{
+        type:String,
+        required:false,
+        default:"testing"
+    },
     user_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",
