@@ -1,13 +1,13 @@
-const orders = require("../../../models/Order")
+const products = require("../../../models/Product")
 
-const getByUserId = async(request,response)=>{
+const getAllProductByCategory = async(request,response)=>{
     try{
-        const response_order = await orders.find({user_id:request.user.id}).populate("user_id").populate("product_id")
-        console.log(response_order,"here6")
-        if(response_order){
+        const response_product = await products.find({category:request.params.category_name})
+        console.log(response_product,"here6")
+        if(response_product){
             return response.json({
                 status:200,
-                data:response_order,
+                data:response_product,
                 message:"successfully added"
             })
         }
@@ -22,4 +22,4 @@ const getByUserId = async(request,response)=>{
         })
     }
 }
-module.exports = getByUserId
+module.exports = getAllProductByCategory

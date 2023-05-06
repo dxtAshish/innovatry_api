@@ -8,6 +8,6 @@ const router = express.Router();
 router.post("/order/:product_id", getProduct, fetchuser, addorder);
 
 
-router.get("/order/getorderByuser",fetchuser,getByUserId)
+router.get("/order/getorderbyuser",fetchuser,getByUserId)
 
 module.exports = router;
