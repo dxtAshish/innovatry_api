@@ -5,6 +5,7 @@ const getAllProduct = require("./get/get")
 const getAllProductByCategory = require("./get/getbycategory")
 const getProductById = require("./get/getbyid")
 const getProductByUserId = require("./get/getbyuserid")
+const getAllProductByTag = require("./get/getbytag")
 const router =  express.Router()
 
 router.post("/addproduct",
@@ -19,6 +20,7 @@ router.post("/addproduct_inno",
 router.get("/getproduct",getAllProduct)
 
 router.get("/getproduct/:category_name",getAllProductByCategory )
+router.get("/getproductbytag/:tag",getAllProductByTag )
 
 router.get("/product/:product_id",getProductById)
 
