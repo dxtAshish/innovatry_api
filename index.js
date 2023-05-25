@@ -12,6 +12,7 @@ app.use('/api/item', require('./routes/item'))
 app.use("/api/product",require("./routes/products/route"))
 app.use("/api/order",require("./routes/order/routes"))
 app.use("/api/upload",require("./routes/uploads/routes"))
+app.use("/api/payment",require("./routes/payment/routes"))
 app.listen(port,()=>{
     console.log("app listining")
 })
